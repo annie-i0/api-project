@@ -1,0 +1,13 @@
+html
+  head
+    title Horror Series
+    link(rel="stylesheet" href="/css/styles.css")
+    body 
+        h1= title
+        h1 Horror Series
+          h2 Network 
+          ul 
+            for network in networks
+              li
+                a(href=`/network/${network}`)= network
+                  
