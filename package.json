@@ -17,6 +17,10 @@
     "pug": "^3.0.2"
   },
   "dependencies": {
-    "eslint": "^7.25.0"
+    "dotenv": "^10.0.0",
+    "eslint": "^7.25.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
   }
 }
