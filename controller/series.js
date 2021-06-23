@@ -1,5 +1,7 @@
 const { request } = require('express')
 const series = require('../series')
+const models = require('../models')
+const Shows = models.Show
 
 const getAllNetworks = (request, response) => {
     let networks = []
@@ -23,4 +25,18 @@ const getSeriesDetails = (request, response) => {
     return response.render('seriesDetails', {eachSeriesDetails})
     }
 
-module.exports= { getAllNetworks, getNetwork, getSeriesDetails }
+const apiGetSeries = async (request, response) => {
+    const shows = await Shows.findAll()
+
+    response.json(shows)
+}    
+
+const apiCreateSeries = async (request, response) => {
+    const show = request.body
+    const newShow = await Shows.create(
+        show
+    )
+    response.json(newShow)
+}
+
+module.exports= { getAllNetworks, getNetwork, getSeriesDetails, apiGetSeries, apiCreateSeries }
