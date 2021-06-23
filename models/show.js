@@ -17,9 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     network: DataTypes.STRING,
     title: DataTypes.STRING,
     createdBy: DataTypes.STRING,
-    synopsis: DataTypes.STRING,
+    synopsis: DataTypes.TEXT,
     seasons: DataTypes.INTEGER
-  }, {
+  }, { paranoid: true, 
     sequelize,
     modelName: 'Show',
   });

@@ -18,19 +18,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       synopsis: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       seasons: {
         type: Sequelize.INTEGER
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
+      createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
+      updatedAt: { type: Sequelize.DATE, defaultVlaue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE') },
+      deletedAt: { type: Sequelize.DATE }
     });
   },
   down: async (queryInterface, Sequelize) => {
