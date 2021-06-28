@@ -6,12 +6,14 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/**/*.test.js",
     "dev": "nodemon index.js",
+    "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/config.js",
     "lint:pug": "pug-lint .",
     "lint:eslint": "eslint --format codeframe ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "pug": "^3.0.2"
