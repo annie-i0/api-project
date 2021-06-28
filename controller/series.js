@@ -25,19 +25,6 @@ const getSeriesDetails = (request, response) => {
     return response.render('seriesDetails', {eachSeriesDetails})
     }
 
-const saveNewSeries = async (request, response) => {
-    const { network, title, createdBy, synopsis, seasons } = request.body
-      
-    if (!network || !title || !createdBy || !synopsis || !seasons) {
-        return response.status(400).send('The following fields are required: network, title, createdBy, synopsis, seasons')
-        }
-      
-    const newSeries = { network, title, createdBy, synopsis, seasons }
-      
-    const series = await models.series.create(newSeries)
-      
-        return response.status(201).send(series)
-      }
 
 const apiGetSeries = async (request, response) => {
     const shows = await Shows.findAll()
@@ -60,4 +47,11 @@ const apiGetOneSeries = async (request, response) => {
     response.send(oneShow)
 }
 
-module.exports= { getAllNetworks, getNetwork, getSeriesDetails, saveNewSeries, apiGetSeries, apiCreateSeries, apiGetOneSeries}
+const apiGetSeriesByNetwork = async (request, response) => {
+    const network = request.params.network
+    const oneNetwork = await Shows.findOne({where: { network }}
+    )
+    response.send(oneNetwork)
+}
+
+module.exports= { getAllNetworks, getNetwork, getSeriesDetails, apiGetSeries, apiCreateSeries, apiGetOneSeries, apiGetSeriesByNetwork}
