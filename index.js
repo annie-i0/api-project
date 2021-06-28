@@ -1,6 +1,6 @@
 const express = require('express')
 const series = require('./series')
-const {getAllNetworks, getNetwork, getSeriesDetails, apiGetSeries, apiCreateSeries, apiGetOneSeries} = require('./controller/series')
+const {getAllNetworks, getNetwork, getSeriesDetails, saveNewSeries, apiGetSeries, apiCreateSeries, apiGetOneSeries} = require('./controller/series')
 
 
 const app = express()
@@ -12,6 +12,7 @@ app.use(express.static('public'))
 app.get('/', getAllNetworks)
 app.get('/network/:networkName', getNetwork)
 app.get('/title/:id', getSeriesDetails)
+app.post('/', bodyParser.json(), saveNewSeries)
 
 // api routes
 app.get('/api', apiGetSeries)

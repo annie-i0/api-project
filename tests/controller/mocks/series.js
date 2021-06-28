@@ -1,0 +1,25 @@
+const seriesList = [{
+    id: '1',
+    network: 'Netflix',
+    title: 'American Horror Story',
+    createdBy: 'Ryan Murphy and Brad Falchuk',
+    synopsis: 'An American anthology horror series with each season conceived as a self-contained miniseries, following a different set of characters and settings, and a story line with its own "beginning, middle, and end"',
+    seasons: '9',
+  },
+  {
+    id: '2',
+    network: 'Showtime',
+    title: 'Penny Dreadful',
+    createdBy: 'John Logan',
+    synopsis: 'A British-American horror drama series. It follows deeply Catholic clairvoyant, Vanessa Ives, retired colonial-African explorer, Sir Malcolm Murray, and American sharpshooter Ethan Chandler, in a supernatural mystery that brings them into conflict and connection with a number of famous literary figures from 19thcentury Gothic fiction. This includes Victor Frankenstein, Dorian Gray, Henry Jekyll, and much of the cast of Bram Stoker’s Dracula.',
+    seasons: '3',
+  }]
+  
+  const singleSeries = {
+    id: '2',
+    network: 'Netflix',
+    title: 'The Haunting of Bly Manor',
+    createdBy: 'Mike Flanagan',
+    synopsis: 'An American supernatural horror drama series loosely based on the 1959 novel of the same name by Shirley Jackson. The story follows Hugh and Olivia Crain and their five children as they move into the Hill House. The Crains arrive at Hill House hoping to fix it up and sell it, but things don’t go exactly as planned. They are stuck there longer than expected and the family is subjected to the hauntings.',
+    seasons: '1',
+  }
