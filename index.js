@@ -1,6 +1,6 @@
 const express = require('express')
 const series = require('./series')
-const {getAllNetworks, getNetwork, getSeriesDetails, apiGetSeries, apiCreateSeries} = require('./controller/series')
+const {getAllNetworks, getNetwork, getSeriesDetails, apiGetSeries, apiCreateSeries, apiGetOneSeries} = require('./controller/series')
 
 
 const app = express()
@@ -15,6 +15,7 @@ app.get('/title/:id', getSeriesDetails)
 
 // api routes
 app.get('/api', apiGetSeries)
+app.get('/api/:id', apiGetOneSeries)
 app.post('/api', apiCreateSeries)
 
 app.all('*', (request, response) => {

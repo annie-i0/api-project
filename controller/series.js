@@ -39,4 +39,11 @@ const apiCreateSeries = async (request, response) => {
     response.json(newShow)
 }
 
-module.exports= { getAllNetworks, getNetwork, getSeriesDetails, apiGetSeries, apiCreateSeries }
+const apiGetOneSeries = async (request, response) => {
+    const id = request.params.id
+    const oneShow = await Shows.findOne({where: { id }}
+    )
+    response.send(oneShow)
+}
+
+module.exports= { getAllNetworks, getNetwork, getSeriesDetails, apiGetSeries, apiCreateSeries, apiGetOneSeries}
